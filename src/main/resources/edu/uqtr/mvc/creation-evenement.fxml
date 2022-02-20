@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.uqtr.mvc.CreationEvenementController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Text>Ajouter un événement</Text>
+    <GridPane hgap="5" vgap="10">
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="0">Nom de l'événement</Label>
+        <TextField GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.columnSpan="4" fx:id="nomEvenement"/>
+
+        <Label GridPane.rowIndex="1" GridPane.columnIndex="0">Date de l'événement</Label>
+        <DatePicker GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="4" fx:id="dateEvenement"/>
+
+        <Label GridPane.rowIndex="2" GridPane.columnIndex="0">Heure de début</Label>
+        <ComboBox GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="heureDebut"/>
+        <Text GridPane.rowIndex="2" GridPane.columnIndex="2"> H </Text>
+        <ComboBox GridPane.rowIndex="2" GridPane.columnIndex="3" fx:id="minuteDebut"/>
+        <Text GridPane.rowIndex="2" GridPane.columnIndex="4"> M </Text>
+
+        <Label GridPane.rowIndex="3" GridPane.columnIndex="0">Heure de fin</Label>
+        <ComboBox GridPane.rowIndex="3" GridPane.columnIndex="1" fx:id="heureFin"/>
+        <Text GridPane.rowIndex="3" GridPane.columnIndex="2"> H </Text>
+        <ComboBox GridPane.rowIndex="3" GridPane.columnIndex="3" fx:id="minuteFin"/>
+        <Text GridPane.rowIndex="3" GridPane.columnIndex="4"> M </Text>
+    </GridPane>
+
+    <Text fx:id="champMessage"/>
+
+    <AnchorPane>
+        <AnchorPane.rightAnchor>0</AnchorPane.rightAnchor>
+        <Button onAction="#ajouterEvenement">Ajouter</Button>
+    </AnchorPane>
+
+</VBox>
