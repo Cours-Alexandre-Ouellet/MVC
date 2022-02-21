@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -75,11 +76,12 @@ public class CreationEvenementController {
     private CalendrierController parent;
 
     /**
-     * Insert les références vers le parent
+     * Crée un nouveau contrôleur pour la fenêtre de création d'événements.
+     *
      * @param stageAffiche le stage qui est affiché par ce contrôleur
      * @param parent le contrôleur parent
      */
-    public void affecterParametres(Stage stageAffiche, CalendrierController parent){
+    public CreationEvenementController(Stage stageAffiche, CalendrierController parent){
         this.stageAffiche = stageAffiche;
         this.parent = parent;
     }

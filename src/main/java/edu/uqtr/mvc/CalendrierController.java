@@ -97,18 +97,21 @@ public class CalendrierController {
         try {
             // Crée une nouvelle fenêtre et charge le FXML
             Stage stage = new Stage();
-            FXMLLoader chargeurFXML = new FXMLLoader(CalendrierApplication.class.getResource("creation-evenement.fxml"));
-            Scene scene = new Scene(chargeurFXML.load(), 400, 400);
+            FXMLLoader chargeurFXML = new FXMLLoader(CalendrierController.class.getResource("creation-evenement.fxml"));
 
             // Passe des valeurs au contrôleur parent
-            CreationEvenementController creationEvenementController = chargeurFXML.getController();
-            creationEvenementController.affecterParametres(stage, this);
+            CreationEvenementController creationEvenementController = new CreationEvenementController(stage, this);
+            chargeurFXML.setController(creationEvenementController);
+
+            // Crée la scéne
+            Scene scene = new Scene(chargeurFXML.load(), 400, 400);
 
             // Paramètres de la fenêtre
             stage.setTitle("Ajouter événement");
             stage.setScene(scene);
             stage.setAlwaysOnTop(true);     // On doit fermer cette fenêtre avant de revenir au calendrier
             stage.show();
+
 
 
         } catch (IOException exception) {
